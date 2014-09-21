@@ -13,18 +13,36 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	  	<script type="text/javascript">
-	  		function getNewImage() {
-	  			$.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f3c9eedff065fb36227bcc0536c95e1e&tags=avocado&per_page=1&format=json", function(data){
-	  				console.log(data);
-	  				console.log("HI");
-	  				$.each(data.items, function(i, item){
-	  					console.log(item.farm);
-	  					var imgString = "https://farm" + data.photo.farm + ".staticflickr.com/" + data.photo.server + "/" + data.photo.id + "_" + data.photo.secret + "jpg";
-	  					console.log(imgString);
-	  					$("<img/>").attr("src", imgString).appendTo("#images");
-	  				});
-	  			});
-	  		};
+	  		$(document).ready(function() {
+	  			$.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f3c9eedff065fb36227bcc0536c95e1e&tags=avocado&per_page=1&format=json", displayImages);
+	  		});
+	  		
+
+				function displayImages(data) {
+
+		    // Start putting together the HTML string
+		    var htmlString = "";
+		    
+		    // Now start cycling through our array of Flickr photo details
+		    $.each(data.items, function(i,item){
+		    
+		        // I only want the ickle square thumbnails
+		        var sourceSquare = (item.media.m).replace("_m.jpg", "_s.jpg");
+		        
+		        // Here's where we piece together the HTML
+		        htmlString += '<li><a href="' + item.link + '" target="_blank">';
+		        htmlString += '<img title="' + item.title + '" src="' + sourceSquare;
+		        htmlString += '" alt="'; htmlString += item.title + '" />';
+		        htmlString += '</a></li>
+		        ';
+		    
+		    });
+    
+    // Pop our HTML in the #images DIV
+    $('#images').html(htmlString);
+    
+    // Close down the JSON function call
+}
 			</script>
 	</head>
 
@@ -34,7 +52,7 @@
       <div id="images"></div>  
 
       <div id="imgButton">
-      	<input type="button" value="New Avocado" onclick="getNewImage()">
+      	<input type="button" value="New Avocado">
       </div>
 
   </body>
