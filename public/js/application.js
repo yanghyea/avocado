@@ -69,9 +69,9 @@ function displayPics(response) {
   var picArray = [];
   for (var i = 0; i < 20; i ++) {
     var picString = "<img src=" + response.data[i].link + "media\/?size=t>";
-    var picArray += picString;
+    picArray += picString;
   }
-  $("#images").html(picString);
+  $("#images").html(picArray);
 }
 
 // Avocado FAQ
