@@ -1,83 +1,60 @@
 // index #buttons
 $(function avocadoInsta() {
-  $("#images").empty();
   $.ajax({
     type: "GET",
+    url: "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+    jsonp: false,
     dataType: "jsonp",
-    cache: false,
-    url: "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
-    success: function(data) {
-      // placing the images on the page
-      for (var i = 0; i < 20; i++) {
-        $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
-      };
-    }
+    crossDomain: true
   });
 });
 
 $(function guacInsta() {
   $.ajax({
     type: "GET",
+    url: "https://api.instagram.com/v1/tags/guacamole/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+    jsonp: false,
     dataType: "jsonp",
-    cache: false,
-    url: "https://api.instagram.com/v1/tags/guacamole/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
-    success: function(data) {
-      // placing the images on the page
-      $("#images").empty();
-      for (var i = 0; i < 20; i++) {
-        $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
-      };
-    }
+    crossDomain: true
   });
 });
 
 $(function eggoInsta() {
   $.ajax({
     type: "GET",
+    url: "https://api.instagram.com/v1/tags/eggocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+    jsonp: false,
     dataType: "jsonp",
-    cache: false,
-    url: "https://api.instagram.com/v1/tags/eggocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
-    success: function(data) {
-      // placing the images on the page
-      $("#images").empty();
-      for (var i = 0; i < 20; i++) {
-        $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
-      };
-    }
+    crossDomain: true
   });
 });
 
 $(function pastaInsta() {
   $.ajax({
     type: "GET",
+    url: "https://api.instagram.com/v1/tags/avocadopasta/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+    jsonp: false,
     dataType: "jsonp",
-    cache: false,
-    url: "https://api.instagram.com/v1/tags/avocadopasta/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
-    success: function(data) {
-      // placing the images on the page
-      $("#images").empty();
-      for (var i = 0; i < 20; i++) {
-        $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
-      };
-    }
+    crossDomain: true
   });
 });
 
 $(function rollInsta() {
   $.ajax({
     type: "GET",
+    url: "https://api.instagram.com/v1/tags/avocadoroll/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+    jsonp: false,
     dataType: "jsonp",
-    cache: false,
-    url: "https://api.instagram.com/v1/tags/avocadoroll/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
-    success: function(data) {
-      // placing the images on the page
-      $("#images").empty();
-      for (var i = 0; i < 20; i++) {
-        $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
-      };
-    }
+    crossDomain: true
   });
 });
+
+// callback function for displaying images
+function displayPics(response) {
+  for (var i = 0; i < 20; i ++) {
+    $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
+  }
+}
 
 // Avocado FAQ
 $(function() {    // do once original document loaded and ready
