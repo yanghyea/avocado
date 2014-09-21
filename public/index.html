@@ -12,28 +12,6 @@
 			<script src="js/application.js"></script>
 
 	  	<title>Avocado</title>
-
-			<script>
-
-
-				$.ajax({
-		      type: "GET",
-		      dataType: "jsonp",
-		      cache: false,
-		      url: "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
-		      success: function(data) {
-		        // placing the images on the page
-		        for (var i = 0; i < 20; i++) {
-          		$("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
-    				};
-    			}
-	      });
-
-
-			</script>
-
-
-
 	</head>
 
 	<body>
@@ -44,18 +22,21 @@
 					<li class='active'><a href='index.html'><span>Home</span></a></li>
 					<li><a href='faq.html'><span>FAQ</span></a></li>
 					<li><a href='facts.html'><span>Fun Facts</span></a></li>
-					<li><a href='game.html'><span>Avocado Memory Game</span></a></li>
+					<li><a href='game.html'><span>Memory Game</span></a></li>
 				</ul>
 			</div>
-		  
-			<div id="images"></div>
-			<br >
-			<br >
-			<br >
+			<br>
+		  <br>
+
 			<div id="newgamebutton">
-        <a class="button-success pure-button" onclick="window.location.reload()">New Pictures!</a>
+        <a class="button-success pure-button" onclick="avocadoInsta()">#avocado</a>
+        <a class="button-success pure-button" onclick="guacInsta()">#guacamole</a>
+        <a class="button-success pure-button" onclick="eggoInsta()">#eggocado</a>
+        <a class="button-success pure-button" onclick="pastaInsta()">#avocadopasta</a>
+        <a class="button-success pure-button" onclick="rollInsta()">#avocadoroll</a>
 	    </div>
 
-  </body>
+			<div id="images"></div>
 
+  </body>
 </html>
