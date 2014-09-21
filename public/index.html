@@ -11,37 +11,38 @@
 
 	  	<title>Avocado</title>
 
-	  	<script type="text/javascript">
-	  		$(document).ready(function() {
-	  			$.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f3c9eedff065fb36227bcc0536c95e1e&tags=avocado&per_page=1&format=json", displayImages);
-	  		});
-	  		
+			<script id="flickrTemplate" type="text/x-jquery-tmpl">
+					<li>
+						<h3>${title}</h3>
+						<div><a href="${link}"><img src="${media.m}" alt="${title}" /></a></div>
+					</li>
+				</script>
+				
+				<script id="myTemplate" type="text/x-jquery-tmpl">
+					<li>${title}</li>
+				</script>
 
-				function displayImages(data) {
+				<!-- This is the jQuery Ajax request to Flickr that populates the data fed to the template -->
 
-		    // Start putting together the HTML string
-		    var htmlString = "";
-		    
-		    // Now start cycling through our array of Flickr photo details
-		    $.each(data.items, function(i,item){
-		    
-		        // I only want the ickle square thumbnails
-		        var sourceSquare = (item.media.m).replace("_m.jpg", "_s.jpg");
-		        
-		        // Here's where we piece together the HTML
-		        htmlString += '<li><a href="' + item.link + '" target="_blank">';
-		        htmlString += '<img title="' + item.title + '" src="' + sourceSquare;
-		        htmlString += '" alt="'; htmlString += item.title + '" />';
-		        htmlString += '</a></li>';
-		      });
+				
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$.ajax({
+							url: "http://api.flickr.com/services/feeds/photos_public.gne",
+							data: "format=json",
+							jsonp: "jsoncallback",
+							dataType: "jsonp",
+							success: function(data) {
+								$("#flickrTemplate").tmpl(data.items).appendTo("#placeholder");
+							}
+						});
+					});
 
-    
-			    // Pop our HTML in the #images DIV
-			    $('#images').html(htmlString);
-			    
-			    // Close down the JSON function call
-				};
-			</script>
+
+				</script>
+
+
+
 	</head>
 
 	<body>
@@ -56,7 +57,7 @@
 				</ul>
 			</div>
 		  
-      <div id="images"></div>  
+      <ul id="placeholder"></ul>
 
       <div id="imgButton">
       	<input type="button" value="New Avocado">
