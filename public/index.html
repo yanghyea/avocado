@@ -21,7 +21,7 @@
 				      $.each( data.items, function( i, item ) {
 				      	console.log("after json");
 				      	var instaLink = item.link;
-				      	var srcStr = item.link + "media\/?size=m";
+				      	var srcStr = item.link + "media/?size=m";
 				        $( "<img>" ).attr( "src", srcStr).appendTo( "#images" );
 				        if ( i === 0 ) {
 				          return false;
