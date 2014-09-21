@@ -39,30 +39,39 @@ function eggoInsta() {
 }
 
 function pastaInsta() {
-  $.ajax({
-    type: "GET",
-    url: "https://api.instagram.com/v1/tags/avocadopasta/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
-    jsonp: false,
-    dataType: "jsonp",
-    crossDomain: true
-  });
+  try {
+    $.ajax({
+      type: "GET",
+      url: "https://api.instagram.com/v1/tags/avocadopasta/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+      jsonp: false,
+      dataType: "jsonp",
+      crossDomain: true
+    });
+    return false;
+  } catch (error) {console.log(error.description);}
 }
 
 function rollInsta() {
-  $.ajax({
-    type: "GET",
-    url: "https://api.instagram.com/v1/tags/avocadoroll/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
-    jsonp: false,
-    dataType: "jsonp",
-    crossDomain: true
-  });
+  try {
+    $.ajax({
+      type: "GET",
+      url: "https://api.instagram.com/v1/tags/avocadoroll/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+      jsonp: false,
+      dataType: "jsonp",
+      crossDomain: true
+    });
+    return false;
+  } catch (error) {console.log(error.description);}
 }
 
 // callback function for displaying images
 function displayPics(response) {
+  var picArray = [];
   for (var i = 0; i < 20; i ++) {
-    $("#images").append("<img src=" + response.data[i].link + "media\/?size=t>");
+    var picString = "<img src=" + response.data[i].link + "media\/?size=t>";
+    var picArray += picString;
   }
+  $("#images").html(picString);
 }
 
 // Avocado FAQ
