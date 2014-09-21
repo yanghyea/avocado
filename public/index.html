@@ -1,19 +1,42 @@
 <!doctype html>
 <html lang="en">
 	<head>
+	  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  	<meta charset="utf-8">
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
-  	<title>Avocado</title>
+	  	<title>Avocado</title>
+
+	  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+			<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	  	<script type="text/javascript">
+	  		function getNewImage() {
+	  			$.getJSON("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f3c9eedff065fb36227bcc0536c95e1e&tags=avocado&per_page=1&format=json", function(data){
+	  				console.log(data);
+	  				console.log("HI");
+	  				$.each(data.items, function(i, item){
+	  					console.log(item.farm);
+	  					var imgString = "https://farm" + data.photo.farm + ".staticflickr.com/" + data.photo.server + "/" + data.photo.id + "_" + data.photo.secret + "jpg";
+	  					console.log(imgString);
+	  					$("<img/>").attr("src", imgString).appendTo("#images");
+	  				});
+	  			});
+	  		};
+			</script>
 	</head>
+
 	<body>
   		<h1 id="A_Title">AVOCADO</h1>
-        <!-- Placed at the end of the document so the pages load faster -->
-      <script src="jquery/jquery-2.0.3.min.js"></script>
-      <script src="bootstrap/bootstrap-2.3.1.min.js"></script>
-      <script src="myOwn.js"></script>
+
+      <div id="images"></div>  
+
+      <div id="imgButton">
+      	<input type="button" value="New Avocado" onclick="getNewImage()">
+      </div>
+
   </body>
+
 </html>
