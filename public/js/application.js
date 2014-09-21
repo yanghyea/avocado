@@ -7,6 +7,7 @@ $(function avocadoInsta() {
     url: "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
     success: function(data) {
       // placing the images on the page
+      $("#images").empty();
       for (var i = 0; i < 20; i++) {
         $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
       };
@@ -22,6 +23,7 @@ $(function guacInsta() {
     url: "https://api.instagram.com/v1/tags/guacamole/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
     success: function(data) {
       // placing the images on the page
+      $("#images").empty();
       for (var i = 0; i < 20; i++) {
         $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
       };
@@ -37,6 +39,7 @@ $(function eggoInsta() {
     url: "https://api.instagram.com/v1/tags/eggocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
     success: function(data) {
       // placing the images on the page
+      $("#images").empty();
       for (var i = 0; i < 20; i++) {
         $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
       };
@@ -52,6 +55,7 @@ $(function pastaInsta() {
     url: "https://api.instagram.com/v1/tags/avocadopasta/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
     success: function(data) {
       // placing the images on the page
+      $("#images").empty();
       for (var i = 0; i < 20; i++) {
         $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
       };
@@ -67,6 +71,7 @@ $(function rollInsta() {
     url: "https://api.instagram.com/v1/tags/avocadoroll/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0",
     success: function(data) {
       // placing the images on the page
+      $("#images").empty();
       for (var i = 0; i < 20; i++) {
         $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
       };
