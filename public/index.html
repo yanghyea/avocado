@@ -11,35 +11,24 @@
 
 	  	<title>Avocado</title>
 
-			<script id="flickrTemplate" type="text/x-jquery-tmpl">
-					<li>
-						<h3>${title}</h3>
-						<div><a href="${link}"><img src="${media.m}" alt="${title}" /></a></div>
-					</li>
-				</script>
-				
-				<script id="myTemplate" type="text/x-jquery-tmpl">
-					<li>${title}</li>
-				</script>
-
-				<!-- This is the jQuery Ajax request to Flickr that populates the data fed to the template -->
-
-				
-				<script type="text/javascript">
-					$(document).ready(function() {
-						$.ajax({
-							url: "http://api.flickr.com/services/feeds/photos_public.gne",
-							data: "format=json",
-							jsonp: "jsoncallback",
-							dataType: "jsonp",
-							success: function(data) {
-								$("#flickrTemplate").tmpl(data.items).appendTo("#placeholder");
-							}
-						});
-					});
-
-
-				</script>
+			<script>
+				(function() {
+				  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+				  $.getJSON( flickerAPI, {
+				    tags: "mount rainier",
+				    tagmode: "any",
+				    format: "json"
+				  })
+				    .done(function( data ) {
+				      $.each( data.items, function( i, item ) {
+				        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+				        if ( i === 3 ) {
+				          return false;
+				        }
+				      });
+				    });
+				})();
+			</script>
 
 
 
@@ -57,12 +46,7 @@
 				</ul>
 			</div>
 		  
-      <ul id="placeholder"></ul>
-
-      <div id="imgButton">
-      	<input type="button" value="New Avocado">
-      </div>
-
+			<div id="images"></div>
   </body>
 
 </html>
