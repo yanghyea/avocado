@@ -135,3 +135,12 @@ body {
   height: 65px;
   text-align: center;
 }
+
+#images {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#newgamebutton {
+  text-align: center;
+}
