@@ -1,35 +1,44 @@
 // index #buttons
-$(function avocadoInsta() {
-  $.ajax({
-    type: "GET",
-    url: "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
-    jsonp: false,
-    dataType: "jsonp",
-    crossDomain: true
-  });
-});
+function avocadoInsta() {
+  try {
+    $.ajax({
+      type: "GET",
+      url: "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+      jsonp: false,
+      dataType: "jsonp",
+      crossDomain: true
+    });
+    return false;
+  } catch (error) {console.log(error.description);}
+}
 
-$(function guacInsta() {
-  $.ajax({
-    type: "GET",
-    url: "https://api.instagram.com/v1/tags/guacamole/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
-    jsonp: false,
-    dataType: "jsonp",
-    crossDomain: true
-  });
-});
+function guacInsta() {
+  try {
+    $.ajax({
+      type: "GET",
+      url: "https://api.instagram.com/v1/tags/guacamole/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+      jsonp: false,
+      dataType: "jsonp",
+      crossDomain: true
+    });
+    return false;
+  } catch (error) {console.log(error.description);}
+}
 
-$(function eggoInsta() {
-  $.ajax({
-    type: "GET",
-    url: "https://api.instagram.com/v1/tags/eggocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
-    jsonp: false,
-    dataType: "jsonp",
-    crossDomain: true
-  });
-});
+function eggoInsta() {
+  try {
+    $.ajax({
+      type: "GET",
+      url: "https://api.instagram.com/v1/tags/eggocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
+      jsonp: false,
+      dataType: "jsonp",
+      crossDomain: true
+    });
+    return false;
+  } catch (error) {console.log(error.description);}
+}
 
-$(function pastaInsta() {
+function pastaInsta() {
   $.ajax({
     type: "GET",
     url: "https://api.instagram.com/v1/tags/avocadopasta/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
@@ -37,9 +46,9 @@ $(function pastaInsta() {
     dataType: "jsonp",
     crossDomain: true
   });
-});
+}
 
-$(function rollInsta() {
+function rollInsta() {
   $.ajax({
     type: "GET",
     url: "https://api.instagram.com/v1/tags/avocadoroll/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0&callback=displayPics",
@@ -47,7 +56,7 @@ $(function rollInsta() {
     dataType: "jsonp",
     crossDomain: true
   });
-});
+}
 
 // callback function for displaying images
 function displayPics(response) {
