@@ -1,0 +1,21 @@
+
+{
+  "questions": [
+    {
+      "question": "What is the best way to peel an avocado?",
+      "answer": "The method you use to peel an avocado can make a difference to your health. Research has shown that the greatest concentration of carotenoid antioxidants in avocado occurs in the dark green flesh that lies just beneath the skin. You don't want to slice into that dark green portion any more than necessary when you are peeling an avocado. For this reason, the best method is what the California Avocado Commission has called the 'nick and peel' method. (1) Cut into the avocado lengthwise, producing two long avocado halves that are still connected in the middle by the seed. (2) Take hold of both halves and twist them in opposite directions until they naturally separate. (3) Remove the seed and cut each of the halves lengthwise to produce long quartered sections of the avocado."
+    },
+    {
+      "question": "Aren't avocados high in fat?",
+      "answer": "The fat avocados contain is monounsaturated, which is heart healthy and won't raise cholesterol. In fact, the good fat in avocados can reduce cholesterol and increase the ratio of HDL ('good') cholesterol to LDL ('bad') cholesterol. Avocados also are a good source of fiber. And they provide glutathione (an antioxidant), folate, and more potassium than bananas. But keep in mind that avocados are relatively high in calories -- about 300 for a whole one."
+    },
+    {
+      "question": "How do I know when my avocado is ready to eat?",
+      "answer": "To check for ripeness, gently squeeze the fruit in the palm of your hand (avoid using your fingertips), when they yield to gentle pressure, they're ready to eat. You can also take a peek under the dry little button on the stem end. If it's green, then you will be rewarded with a perfect avocado. If it's brown, then you will find a brown slimy mess inside."
+    },
+    {
+      "question": "Why does my avocado or guacamole turn brown? If I keep the seed in with the fruit will that help?",
+      "answer": "Oxidation (exposure to air) can cause the fruit of an avocado and/or guacamole to turn brown."
+    }
+  ]
+}
