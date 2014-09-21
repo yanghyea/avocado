@@ -16,7 +16,7 @@
 			<script>
 				(function() {
 					console.log("beginning");
-				  var instaAPI = "https://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0";
+				  var instaAPI = "http://api.instagram.com/v1/tags/avocado/media/recent?client_id=f084959fc2c24ca38cd1083389de62a0";
 				  $.getJSON(instaAPI).done(function(data) {
 				      $.each( data.items, function( i, item ) {
 				      	console.log("after json");
