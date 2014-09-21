@@ -61,7 +61,7 @@ function rollInsta() {
 // callback function for displaying images
 function displayPics(response) {
   for (var i = 0; i < 20; i ++) {
-    $("#images").append("<img src=" + data.data[i].link + "media\/?size=t>");
+    $("#images").append("<img src=" + response.data[i].link + "media\/?size=t>");
   }
 }
 
