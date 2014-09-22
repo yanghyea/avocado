@@ -146,6 +146,12 @@ body {
   text-align: center;
 }
 
+#topics {
+  width: 642px;
+  margin: 0 auto;
+  padding: 92px 0 50px;
+}
+
 #newgamebutton {
   text-align: center;
 }
