@@ -1,6 +1,5 @@
 var boxopened = "";
 var imgopened = "";
-var count = 0;
 var found =  0;
 
 function randomize(first, last){
@@ -37,9 +36,6 @@ function resetGame() {
 	solved_div.style.visibility = 'hidden';
     $("img").hide();
     $("img").removeClass("opacity");
-    count = 0;
-    $("#msg").remove();
-    $("#count").html("" + count);
     boxopened = "";
     imgopened = "";
     found = 0;
@@ -90,10 +86,6 @@ $(document).ready(function() {
                     $("#grid div").bind("click", openCard)
                 }, 400);
             }
-
-
-            count++;
-            $("#count").html("" + count);
 			
             if (found == 8) {
 				var solved_div = document.getElementById('solved_game');

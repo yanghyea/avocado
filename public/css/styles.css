@@ -123,6 +123,11 @@ body {
   color: #1F0B00;
 }
 
+#wrap {
+  position: fixed; 
+  width: 100%;
+}
+
 #A_Title {
   font-size: 400%;
   background-color: #86B52F;
@@ -134,12 +139,14 @@ body {
 }
 
 #footer {
+  position: relative;
   background-color: #86B52F;
   text-align: center;
   padding: 10px;
 }
 
 #images {
+  position: relative;
   margin-top: 30px;
   margin-left: 200px;
   margin-right: 200px;
@@ -152,5 +159,6 @@ body {
 }
 
 #newgamebutton {
+  position: relative;
   text-align: center;
 }

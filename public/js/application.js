@@ -1,10 +1,12 @@
-// call avocadoInsta() when document is ready
-$(function() {
+$(function() {   // do once original document loaded and ready
   avocadoInsta();
+  // want to call this function once doc loads so that the index page will show images when it first loads 
+  // before one presses any buttons
 });
 
 // index Instagram photo #buttons
 function avocadoInsta() {
+  // Grabs 20 most recent pictures that are tagged with #avocado from Instagram
   try {
     $.ajax({
       type: "GET",
@@ -18,6 +20,7 @@ function avocadoInsta() {
 }
 
 function guacInsta() {
+  // Grabs 20 most recent pictures that are tagged with #guacamole from Instagram
   try {
     $.ajax({
       type: "GET",
@@ -31,6 +34,7 @@ function guacInsta() {
 }
 
 function eggoInsta() {
+  // Grabs 20 most recent pictures that are tagged with #eggocado from Instagram
   try {
     $.ajax({
       type: "GET",
@@ -44,6 +48,7 @@ function eggoInsta() {
 }
 
 function pastaInsta() {
+  // Grabs 20 most recent pictures that are tagged with #avocadopasta from Instagram
   try {
     $.ajax({
       type: "GET",
@@ -57,6 +62,7 @@ function pastaInsta() {
 }
 
 function rollInsta() {
+  // Grabs 20 most recent pictures that are tagged with #avocadoroll from Instagram
   try {
     $.ajax({
       type: "GET",
@@ -73,13 +79,15 @@ function rollInsta() {
 function displayPics(response) {
   var picArray = [];
   for (var i = 0; i < 20; i ++) {
+    // parse through response from Ajax request to grab a single image link
     var picString = "<img src=" + response.data[i].link + "media\/?size=t>";
     picArray += picString;
   }
+  // set the images div with new picArray created from Ajax request
   $("#images").html(picArray);
 }
 
-// Avocado FAQ
+// get Avocado FAQ json
 $(function() {    // do once original document loaded and ready
 	$.getJSON("avocadoFAQ.json", function(response, diditwork) {
       console.log(diditwork);
@@ -94,7 +102,7 @@ $(function() {    // do once original document loaded and ready
   });  // getJSON
 }); // onReady
 
-// Avocado Fun Facts
+// get Avocado Fun Facts json
 $(function() {    // do once original document loaded and ready
   $.getJSON("avocadoFacts.json", function(response, diditwork) {
       console.log(diditwork);
