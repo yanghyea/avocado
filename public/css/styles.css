@@ -124,8 +124,8 @@ body {
 }
 
 #wrap {
-  position: fixed; 
-  width: 100%;
+  position: absolute; 
+  resize: none;
 }
 
 #A_Title {
@@ -146,7 +146,6 @@ body {
 }
 
 #images {
-  position: relative;
   margin-top: 30px;
   margin-left: 200px;
   margin-right: 200px;
