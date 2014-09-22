@@ -88,9 +88,8 @@ $(function() {    // do once original document loaded and ready
               var entry = response.questions[i];
               displayT += "<div class='topic'><h3>"
                 + entry.question + "<\/h3><ul><li>" 
-                + entry.answer + "<\/li>";
+                + entry.answer + "<\/li><\/ul>";
               }
-      displayT += "<\/ul>";
   $("#faqArea").html(displayT);
   });  // getJSON
 }); // onReady
