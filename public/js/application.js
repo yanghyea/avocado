@@ -86,8 +86,8 @@ $(function() {    // do once original document loaded and ready
       var displayT = "";
       for (var i = 0; i < response.questions.length; i ++) {
               var entry = response.questions[i];
-              displayT += "<li>"
-                + entry.question + " " 
+              displayT += "<div class='topic'><h3>"
+                + entry.question + "<\/h3><ul><li>" 
                 + entry.answer + "<\/li>";
               }
       displayT += "<\/ul>";
