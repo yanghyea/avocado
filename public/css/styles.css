@@ -117,16 +117,10 @@
   }
 }
 
-html {
-
-}
-
 body {
   margin: 0px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
   color: #1F0B00;
-  background-image: url("/Users/yanghyea/Desktop/mobile_to_cloud/avocado/public/img/avocadowallpaper.jpg");
-
 }
 
 #A_Title {
