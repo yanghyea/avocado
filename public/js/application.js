@@ -1,3 +1,8 @@
+// call avocadoInsta() when document is ready
+$(function() {
+  avocadoInsta();
+});
+
 // index #buttons
 function avocadoInsta() {
   try {
