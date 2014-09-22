@@ -3,7 +3,7 @@ $(function() {
   avocadoInsta();
 });
 
-// index #buttons
+// index Instagram photo #buttons
 function avocadoInsta() {
   try {
     $.ajax({
@@ -101,11 +101,10 @@ $(function() {    // do once original document loaded and ready
       var displayT = "";
       for (var i = 0; i < response.facts.length; i ++) {
               var entry = response.facts[i];
-              displayT += "<li>"
-                + entry.title + " " 
-                + entry.fact + "<\/li>";
+              displayT += "<div class='topic'><h3>"
+                + entry.title + "<\/h3><ul><li>" 
+                + entry.fact + "<\/li><\/ul>";
               }
-      displayT += "<\/ul>";
   $("#factsArea").html(displayT);
   });  // getJSON
 }); // onReady
