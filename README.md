@@ -12,13 +12,22 @@ Project created for 67-328 Mobile to Cloud: Building Distributed Applications (C
 
 ## References
 
-Avocado FAQs: 
+Avocado FAQs:
+
 http://www.avocadocentral.com/how-to/faqs
+
 http://www.drweil.com/drw/u/QAA401311/Avoid-Avocados.html
+
 http://www.thekitchn.com/how-to-know-when-your-avocado-isperfectly-ripe-inside-172933
+
 Avocado Fun Facts: http://www.webmd.com/diet/features/8-healthy-facts-aboutavocados
+
 Button CSS: http://purecss.io/buttons/
+
 Instagram API: http://instagram.com/developer/
+
 jQuery JSON request: http://api.jquery.com/jquery.getjson/
+
 Memory game: http://www.blackieandkanuto.com/games/memory/index.html
+
 Nav Bar: http://cssmenumaker.com/menu/simple-responsive-menu
